@@ -2,17 +2,138 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
-        {% endblock %}
+    	<title>{% block title %}PC4You{% endblock %}</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block stylesheets %}
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Georgia:300,400,500,700,800" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:500,700" rel="stylesheet">
+	{{ encore_entry_link_tags('app') }}	
+	{% endblock %}
+	<script src = "https://unpkg.com/sweetalert/dist/sweetalert.min.js"> </script> 
+    {% block javascripts %}
+	  {{ encore_entry_script_tags('app') }}
+	{% endblock %}
+</head>
+<body>
+	<header>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 d-none d-lg-block">
+					<div class="drop-d-lang">
+						<span>română <i class="fas fa-chevron-down"></i></span>
+						<div class="drop-d-cont">
+							<a href="/">RU</a>
+							<a href="/">eng</a>
+						</div>
+					</div>
+					<h5>contacteaza-ne la: <a class="color-2" href="/">(+373) 02 152 120</a></h5>
+				</div>
+				<div class="col-md-6 d-none d-lg-block">
+					<div class="social">
+						<a href="register.php"><i class="fas fa-user-edit"></i> Crează un Cont</a>
+						<ul>
+							<li class="ico3">
+								<a href="/"><i class="fas fa-search"></i></a>
+								<a href="/"><i class="far fa-heart"></i></a>
+							</li>
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+			<a class="d-contents" href="/">
+				<img class="logo" src="/img/logo.png" alt="logo">
+			</a>
+			<div class="row">
+				<div class="col-2 d-lg-none a-center">
+					<a>
+						<input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+						<label for="openSidebarMenu" class="sidebarIconToggle">
+							<div class="spinner diagonal part-1"></div>
+							<div class="spinner horizontal"></div>
+							<div class="spinner diagonal part-2"></div>
+						</label>
+					</a>
+				</div>
+				<div class="col-2 ml-auto d-lg-none ">
+					<a href="/"><i class="fas fa-search"></i></a>
+				</div>
 
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
-    </head>
+				<div class="col-md-6 d-none d-lg-block">
+					<div class="menu">
+						<ul>
+							<li><a class="submenu" data-menu="oferte" href="#oferte" >Oferte <i class="fas fa-chevron-down"></i></a>
+							</li>
+							<li><a class="submenu" data-menu="produse" href="/">Produse <i class="fas fa-chevron-down"></i></a>
+							</li> 
+							<li><a class="submenu" href="builder.php">Crează-ți PC-ul</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-6 d-none d-lg-block">
+					<div class="menu menu-r">
+						<ul>
+							<li><a class="submenu" href="/">Contacte</a></li>
+							<li><a class="submenu" href="cart.php">Coșul-Meu</a></li>
+							<li><a class="submenu capitalize" href="login.php">Autentificarea <i class="fas fa-user-check"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div id="oferte" class="mar-top">
+				<div class="flex-container">
+					<a href="">Oficiu</a>
+					<a href="">Gaming</a>
+					<a href="">Studii</a>
+				</div>
+			</div>
+			<div id="produse" class="mar-top">
+				<div class="flex-container">
+					<div class="subsub">
+						<a class="submenu2" href="procesor.php">Procesor</a>
+					</div>
+					<div class="subsub">
+						<a class="submenu2" href="">Placă de Bază</a>
+					</div>
+					<div class="subsub">
+						<a class="submenu2" href="">Cooler</a>
+					</div>
+					<div class="subsub">
+						<a class="submenu2" href="">Memorie RAM</a>
+					</div>
+					<div class="subsub">
+						<a class="submenu2" href="">Placă Video</a>
+					</div>
+					<div class="subsub">
+						<a href="" class="submenu2" data-submenu="hdd-ssd">HDD & SSD <i class="fas fa-chevron-down"></i></a>
+						<div id="hdd-ssd" class="col-menu">
+							<a href="">HDD</a>
+							<a href="">SSD</a>
+						</div>
+					</div>
+					<div class="subsub">
+						<a href="" class="submenu2" data-submenu="case-surse">Carcasă & Sursă <i class="fas fa-chevron-down"></i></a>
+						<div id="case-surse" class="col-menu">
+							<a href="">Carcasă(Case)</a>
+							<a href="">Surse PC</a>
+						</div>
+					</div>
+					<div class="subsub">
+						<a href="" class="submenu2" data-submenu="periferice">Periferice <i class="fas fa-chevron-down"></i></a>
+						<div id="periferice" class="col-menu">
+							<a href="">Mouse</a>
+							<a href="add-tast.php">Tastatură</a>
+						</div>
+					</div>
+					<div class="subsub">
+						<a class="submenu2" href="">Monitor</a>
+					</div>
+				</div>
+			</div>
+		</div>				
+	</header>	
     <body>
         {% block body %}{% endblock %}
     </body>

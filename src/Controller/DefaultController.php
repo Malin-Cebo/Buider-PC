@@ -3,20 +3,26 @@
 namespace App\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 
-
-class DefaultController extends AbstractController 
+class DefaultController extends AbstractController
 {
     /**
      * @Route("/")
      */
-    public function index() {
+    public function index()
+    {
         return $this->render('default/index.html.twig');
     }
-}
 
+    /**
+     * @Route("/builder.html.twig", name="Creaza")
+     */
+    public function builder()
+    {
+        return $this->render('builder.html.twig');
+    }
+}
 ?>
